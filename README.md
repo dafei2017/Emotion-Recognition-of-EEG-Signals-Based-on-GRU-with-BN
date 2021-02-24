@@ -9,3 +9,13 @@
 ![image](https://github.com/dafei2017/Emotion-Recognition-of-EEG-Signals-Based-on-GRU-with-BN/blob/main/batch_normalization.png)
 
 ![image](https://github.com/dafei2017/Emotion-Recognition-of-EEG-Signals-Based-on-GRU-with-BN/blob/main/gru_cell.png)
+
+
+![image](https://github.com/dafei2017/Emotion-Recognition-of-EEG-Signals-Based-on-GRU-with-BN/blob/main/gru_arousal.train.png)
+
+
+![image](https://github.com/dafei2017/Emotion-Recognition-of-EEG-Signals-Based-on-GRU-with-BN/blob/main/gruarousal.test.png)
+
+
+![image](https://github.com/dafei2017/Emotion-Recognition-of-EEG-Signals-Based-on-GRU-with-BN/blob/main/gruvalence.test.png)
+
