@@ -9,10 +9,10 @@ tf.reset_default_graph()
 
 # Hyper Parameters
 learning_rate = 0.0005    # 学习率
-n_steps = 12            # LSTM 展开步数（时序持续长度）
+n_steps = 12            # GRU 展开步数（时序持续长度）
 n_inputs = 21504           # 输入节点数
 n_hiddens = 64         # 隐层节点数
-n_layers = 2            # LSTM layer 层数
+n_layers = 2            # GRU layer 层数
 n_classes = 2          # 输出节点数（分类数目）
 batch_size = 128
 # data
@@ -105,18 +105,18 @@ with tf.name_scope('biases'):
     biases = tf.Variable(tf.random_normal([n_classes]), name='b')
     tf.summary.histogram('output_layer_biases', biases)
 
-# RNN structure
+# GRU structure
 def RNN_LSTM(x, Weights, biases):
     # RNN 输入 reshape
     x = tf.reshape(x, [-1, n_steps, n_inputs])
-    # 定义 LSTM cell
+    # 定义 GRU cell
     # cell 中的 dropout
     def attn_cell():
         lstm_cell = tf.contrib.rnn.GRUCell(n_hiddens)
         with tf.name_scope('lstm_dropout'):
             return tf.contrib.rnn.DropoutWrapper(lstm_cell, output_keep_prob=keep_prob)
     # attn_cell = tf.contrib.rnn.DropoutWrapper(lstm_cell, output_keep_prob=keep_prob)
-    # 实现多层 LSTM
+    # 实现多层 GRU
     # [attn_cell() for _ in range(n_layers)]
     enc_cells = []
     for i in range(0, n_layers):
